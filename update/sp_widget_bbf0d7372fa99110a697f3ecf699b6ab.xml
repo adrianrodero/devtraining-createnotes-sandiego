@@ -10,6 +10,13 @@
     $rootScope.noteID = id;
     $rootScope.$emit('selectNote', id);
   }
+	
+	$rootScope.$on('updateTitle', function(event,data) { 
+		console.log("updateTitle event received: " + event);
+		console.log(data);
+		c.data.notes[c.notePos].title = data.title;
+		c.data.notes[c.notePos].note = data.note;
+	});
 }]]></client_script>
         <controller_as>c</controller_as>
         <css/>
@@ -48,14 +55,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-09-02 12:18:44</sys_created_on>
         <sys_id>bbf0d7372fa99110a697f3ecf699b6ab</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Notes List</sys_name>
         <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
         <sys_policy/>
         <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
         <sys_update_name>sp_widget_bbf0d7372fa99110a697f3ecf699b6ab</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-09-05 14:05:25</sys_updated_on>
+        <sys_updated_on>2022-09-06 08:46:56</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default">
   <div class="panel-heading clearfix">
     <h3 class="panel-title pull-left">
